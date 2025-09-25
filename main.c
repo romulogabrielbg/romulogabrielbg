@@ -42,12 +42,12 @@ int mover_onca(char mapa[LINHAS][COLUNAS], int linha_onca, int coluna_onca,int l
         // Se chegou ao destino
         if (atual.linha == linha_pessoa && atual.coluna == coluna_pessoa) {
             
-									// Reconstruir o caminho a partir do destino at√© o in√≠cio encontrando melhor trajeto
+									// Reconstruir o caminho a partir do destino atÈ o inÌcio encontrando melhor trajeto
 									
             int l = linha_pessoa;
             int c = coluna_pessoa;
 
-            						// Voltar at√© encontrar a posi√ß√£o inicial da on√ßa
+            						// Voltar atÈ encontrar a posiÁ„o inicial da onÁa
             while (!(anterior[l][c].linha == linha_onca && anterior[l][c].coluna == coluna_onca)) {
                 int temp_l = anterior[l][c].linha;
                 int temp_c = anterior[l][c].coluna;
@@ -85,7 +85,7 @@ int mover_onca(char mapa[LINHAS][COLUNAS], int linha_onca, int coluna_onca,int l
         }
     }
 
-    // Se n√£o encontrar caminho, on√ßa n√£o se move
+    // Se n„o encontrar caminho, onÁa n„o se move
     *nova_linha = linha_onca;
     *nova_coluna = coluna_onca;
     return 3;
@@ -117,12 +117,12 @@ int main() {
         }
     }
 
-    // Inicializa o gerador de n√∫meros aleat√≥rios
+    // Inicializa o gerador de n˙meros aleatÛrios
     srand(time(NULL));
     
 
 	
-    // Preenche aleatoriamente a matriz com o s√≠mbolo '#'
+    // Preenche aleatoriamente a matriz com o sÌmbolo '#'
     for ( i = 0; i < LINHAS; i++) {
         for (j = 0; j < COLUNAS; j++) {
             if (rand() % 8 == 0) {
@@ -132,7 +132,7 @@ int main() {
         }
     }
     
-      // COLOCA 'P' DE PESSOA EM UM LOCAL DO MAPA QUE N√ÉO SEJA OBSTACULO
+      // COLOCA 'P' DE PESSOA EM UM LOCAL DO MAPA QUE N√O SEJA OBSTACULO
     do {
     	linha_pessoa = rand() % LINHAS;
     	coluna_pessoa = rand() % COLUNAS;
@@ -140,7 +140,7 @@ int main() {
 
     mapa[linha_pessoa][coluna_pessoa] = PESSOA;
 
-    // COLOCA 'O' DE ON√áA EM UM LOCAL DO MAPA QUE N√ÉO √â OBSTACULO E NEM PESSOA
+    // COLOCA 'O' DE ON«A EM UM LOCAL DO MAPA QUE N√O … OBSTACULO E NEM PESSOA
 
     do{
 	    linha_onca = rand() % LINHAS;
@@ -149,7 +149,7 @@ int main() {
 
     mapa[linha_onca][coluna_onca] = ONCA;
 
-	// COLOCA 'S' DE SAIDA EM UMA POSI√á√ÉO ALEATORIA ONDE N√ÉO SEJA OBSTACULO, PESSOA E NEM ON√áA
+	// COLOCA 'S' DE SAIDA EM UMA POSI«√O ALEATORIA ONDE N√O SEJA OBSTACULO, PESSOA E NEM ON«A
 
     do{
         linha_saida = rand() % LINHAS;
@@ -334,7 +334,7 @@ int main() {
 		
 		if (linha_nova == linha_pessoa && coluna_nova == coluna_pessoa) { //verificacao para nao apagar a onca ou o personagem
 		    f = 5; 
-			// On√ßa pegou a pessoa!
+			// OnÁa pegou a pessoa!
 		} else {
 			//se o movimento da onca nao for apagar a posicao do jogador entao troca a posicao
 		    mapa[linha_onca][coluna_onca] = VAZIO;
